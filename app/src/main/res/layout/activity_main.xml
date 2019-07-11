@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/chat_list"
+            android:background="@color/colorPrimary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/bottomMsgLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.constraint.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@id/chat_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/bottomMsgLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+        <ImageView
+                android:id="@+id/addPhotoImgView"
+                app:layout_constraintStart_toStartOf="@+id/bottomMsgLayout"
+                app:layout_constraintEnd_toStartOf="@+id/msgEditText"
+                android:contentDescription="@string/app_name"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"/>
+        <EditText
+                android:labelFor="@+id/msgEditText"
+                android:id="@+id/msgEditText"
+                app:layout_constraintEnd_toStartOf="@id/sendMsgBtn"
+                app:layout_constraintStart_toEndOf="@+id/addPhotoImgView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        <Button
+                android:text="Send"
+                android:layout_margin="4dp"
+                android:id="@+id/sendMsgBtn"
+                app:layout_constraintStart_toEndOf="@id/msgEditText"
+                app:layout_constraintEnd_toEndOf="@id/bottomMsgLayout"
+                android:layout_width="72dp"
+                android:layout_height="match_parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
